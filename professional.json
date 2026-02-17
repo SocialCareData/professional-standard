@@ -21,15 +21,13 @@
               "name": "value",
               "type": "String",
               "cardinality": "1..1",
-              "description": "A single unique identifier attached to the professional (e.g., NHS number).",
-              "alignment": { "fhir": "Identifier.value", "pds": "UNIQUE_REFERENCE" }
+              "description": "A single unique identifier attached to the professional (e.g., NHS number)."
             },
             {
               "name": "system",
               "type": "URI",
               "cardinality": "1..1",
-              "description": "System that the identifier adheres to (e.g., https://fhir.nhs.uk/Id/nhs-number).",
-              "alignment": { "fhir": "Identifier.system" }
+              "description": "System that the identifier adheres to (e.g., https://fhir.nhs.uk/Id/nhs-number)."
             }
           ]
         },
@@ -43,29 +41,25 @@
               "name": "familyName",
               "type": "String",
               "cardinality": "1..*",
-              "description": "Surname or family name.",
-              "alignment": { "fhir": "HumanName.family", "pds": "FAMILY_NAME" }
+              "description": "Surname or family name."
             },
             {
               "name": "givenNames",
               "type": "String",
               "cardinality": "1..*",
-              "description": "First and any middle names.",
-              "alignment": { "fhir": "HumanName.given", "pds": "GIVEN_NAME" }
+              "description": "First and any middle names."
             },
             {
               "name": "preferredNames",
               "type": "String",
               "cardinality": "0..*",
-              "description": "Any preferred names used by the person.",
-              "alignment": { "pds": "OTHER_GIVEN_NAME" }
+              "description": "Any preferred names used by the person."
             },
             {
               "name": "use",
               "type": "Code",
               "cardinality": "0..1",
-              "description": "How this name instance is used.",
-              "alignment": { "fhir": "HumanName.use" }
+              "description": "How this name instance is used."
             }
           ]
         },
