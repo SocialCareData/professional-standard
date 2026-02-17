@@ -1,0 +1,121 @@
+{
+  "metadata": {
+    "title": "Professional Data Standard (Identification)",
+    "version": "0.1",
+    "status": "draft",
+    "effectiveDate": "2026-02-17",
+    "description": "Standardised data fields for identifying professionals in an individual's life."
+  },
+  "entities": [
+    {
+      "name": "Professional",
+      "description": "A professional that provides care or other service to individuals.",
+      "fields": [
+        {
+          "name": "Identifier",
+          "type": "Object",
+          "cardinality": "1..*",
+          "description": "Unique identifiers (IDs) associated with the professional.",
+          "children": [
+            {
+              "name": "value",
+              "type": "String",
+              "cardinality": "1..1",
+              "description": "A single unique identifier attached to the professional (e.g., NHS number).",
+              "alignment": { "fhir": "Identifier.value", "pds": "UNIQUE_REFERENCE" }
+            },
+            {
+              "name": "system",
+              "type": "URI",
+              "cardinality": "1..1",
+              "description": "System that the identifier adheres to (e.g., https://fhir.nhs.uk/Id/nhs-number).",
+              "alignment": { "fhir": "Identifier.system" }
+            }
+          ]
+        },
+        {
+          "name": "Name",
+          "type": "Object",
+          "cardinality": "1..1",
+          "description": "Container for name parts.",
+          "children": [
+            {
+              "name": "familyName",
+              "type": "String",
+              "cardinality": "1..*",
+              "description": "Surname or family name.",
+              "alignment": { "fhir": "HumanName.family", "pds": "FAMILY_NAME" }
+            },
+            {
+              "name": "givenNames",
+              "type": "String",
+              "cardinality": "1..*",
+              "description": "First and any middle names.",
+              "alignment": { "fhir": "HumanName.given", "pds": "GIVEN_NAME" }
+            },
+            {
+              "name": "preferredNames",
+              "type": "String",
+              "cardinality": "0..*",
+              "description": "Any preferred names used by the person.",
+              "alignment": { "pds": "OTHER_GIVEN_NAME" }
+            },
+            {
+              "name": "use",
+              "type": "Code",
+              "cardinality": "0..1",
+              "description": "How this name instance is used.",
+              "alignment": { "fhir": "HumanName.use" }
+            }
+          ]
+        },
+        {
+          "name": "role",
+          "type": "Code",
+          "cardinality": "1..*",
+          "description": "Code for the professional's occupational role",
+          "vocabulary": {
+            "name": "ProfessionalRoleCode",
+            "url": "/#"
+          }
+        },
+        {
+          "name": "status",
+          "type": "Code",
+          "cardinality": "0..1",
+          "description": "Code for the professional's current working status",
+          "vocabulary": {
+            "name": "StatusCode",
+            "url": "/#"
+          }
+        },
+        {
+          "name": "PersonalContact",
+          "type": "Object",
+          "cardinality": "1..1",
+          "description": "Container for contact information.",
+          "children": [
+            {
+              "name": "email",
+              "type": "String",
+              "cardinality": "0..*",
+              "description": "Email address"
+            },
+            {
+              "name": "telephone",
+              "type": "Telephone Number",
+              "cardinality": "0..*",
+              "description": "Telephone Number"
+            }
+          ]
+        },
+        {
+          "name": "relatedService",
+          "type": "Link",
+          "cardinality": "1..*",
+          "description": "Link to Service objects related to the professional"
+        }
+      ]
+    }
+  ]
+}
