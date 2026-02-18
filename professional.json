@@ -70,7 +70,7 @@
           "description": "Code for the professional's occupational role",
           "vocabulary": {
             "name": "ProfessionalRoleCode",
-            "url": "/#"
+            "url": "#"
           }
         },
         {
@@ -80,7 +80,7 @@
           "description": "Code for the professional's current working status",
           "vocabulary": {
             "name": "StatusCode",
-            "url": "/#"
+            "url": "#"
           }
         },
         {
@@ -107,7 +107,7 @@
           "name": "relatedService",
           "type": "Link",
           "cardinality": "1..*",
-          "description": "Link to Service objects related to the professional"
+          "description": "Link (URI) to Service objects the professional is associated with (e.g., as an employer or base of operations)."
         }
       ]
     }
