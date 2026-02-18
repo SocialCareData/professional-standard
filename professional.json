@@ -104,10 +104,18 @@
           ]
         },
         {
-          "name": "relatedService",
-          "type": "Link",
-          "cardinality": "1..*",
-          "description": "Link (URI) to Service objects the professional is associated with (e.g., as an employer or base of operations)."
+          "name": "RelatedService",
+          "type": "Object",
+          "cardinality": "0..*",
+          "description": "References to Service(s) the professional is related to.",
+          "children": [
+            {
+              "name": "ref",
+              "type": "Link",
+              "cardinality": "1..1",
+              "description": "A reference to a Service record involved in the event."
+            }
+          ]
         }
       ]
     }
