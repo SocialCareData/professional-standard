@@ -65,13 +65,9 @@
         },
         {
           "name": "role",
-          "type": "Code",
+          "type": "String",
           "cardinality": "1..*",
-          "description": "Code for the professional's occupational role",
-          "vocabulary": {
-            "name": "ProfessionalRoleCode",
-            "url": "#"
-          }
+          "description": "Text to describe professional's occupational role, eg. their position in an organogram"
         },
         {
           "name": "status",
@@ -113,7 +109,21 @@
               "name": "ref",
               "type": "Link",
               "cardinality": "1..1",
-              "description": "A reference to a Service record involved in the event."
+              "description": "A reference to a Service record."
+            }
+          ]
+        },
+        {
+          "name": "RelatedOrganisation",
+          "type": "Object",
+          "cardinality": "0..*",
+          "description": "References to Organisation(s) the professional is related to.",
+          "children": [
+            {
+              "name": "ref",
+              "type": "Link",
+              "cardinality": "1..1",
+              "description": "A reference to a Organisation record."
             }
           ]
         }
