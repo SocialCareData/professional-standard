@@ -80,7 +80,7 @@
           "description": "Code for the professional's current working status",
           "vocabulary": {
             "name": "StatusCode",
-            "url": "#"
+            "url": "https://socialcaredata.github.io/todo.html"
           }
         },
         {
