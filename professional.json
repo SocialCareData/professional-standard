@@ -79,8 +79,8 @@
           "cardinality": "0..1",
           "description": "Code for the professional's current working status",
           "vocabulary": {
-            "name": "StatusCode",
-            "url": "#"
+            "name": "ActiveCode",
+            "url": "/spec/controlled-vocabularies/?tab=specification#activecode"
           }
         },
         {
