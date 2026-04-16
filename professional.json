@@ -59,7 +59,11 @@
               "name": "use",
               "type": "Code",
               "cardinality": "0..1",
-              "description": "How this name instance is used."
+              "description": "How this name instance is used.",
+              "vocabulary": {
+                "name": "NameUseCode",
+                "url": "https://build.fhir.org/valueset-name-use.html"
+              }
             }
           ]
         },
@@ -71,13 +75,9 @@
         },
         {
           "name": "status",
-          "type": "Code",
+          "type": "Boolean",
           "cardinality": "0..1",
-          "description": "Code for the professional's current working status",
-          "vocabulary": {
-            "name": "StatusCode",
-            "url": "#"
-          }
+          "description": "Code for the professional's current working status"
         },
         {
           "name": "PersonalContact",
